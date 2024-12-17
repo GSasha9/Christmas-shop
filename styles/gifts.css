@@ -1,0 +1,109 @@
+
+.active{
+    background-color: var(--WHITE_STATIC_20)!important;
+    border-radius: 12px!important;
+    cursor: default;
+}
+
+.active:hover{
+    pointer-events: none;
+    cursor: default;
+}
+
+.disabled{
+    cursor: default;
+    pointer-events: none;
+    color: var(--RED_MAIN);
+    background-color: var(--RED_MAIN_10);
+    border-radius: 12px;
+    transition: ease .5s;
+}
+
+.inner__gifts{
+    background-color: var(--RED_MAIN);
+    background-image: url(../assets/img/bg-garland.png);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-position-y: 0px;
+    align-items: center;
+    color: var(--WHITE_STATIC);
+    gap: 20px;
+}
+
+.gifts__category{
+    display: flex;
+}
+
+.gifts__category-item{
+    padding: 12px 20px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    line-height: 15.6px;
+    letter-spacing: 0.11em;
+}
+
+.gifts__category-item:hover{
+    background-color: var(--WHITE_STATIC_20);
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.gifts__table{
+    display: grid;
+    grid-template-columns: repeat(4, 310px);
+    grid-template-rows: repeat(3, 342px);
+}
+
+@media all and  (max-width: 1305px){
+
+    .gifts__table{
+        grid-template-columns: repeat(2, 310px);
+        grid-template-rows: repeat(6, 342px);
+    }
+
+    .cards__list{
+        padding: 0 20px;
+    }
+
+}
+
+@media all and  (max-width: 768px){
+    .disabled{
+        background-color: transparent;
+        pointer-events: initial;
+        color: var(--DARK_BLUE_MAIN);
+    }
+}
+
+@media all and  (max-width: 670px){
+
+    .gifts__table{
+        grid-template-columns: repeat(1, 310px);
+        grid-template-rows: repeat(12, 342px);
+    }
+
+    .gifts__category-item{
+        padding: 12px 8px;
+        width: fit-content;
+        text-wrap: nowrap;
+        letter-spacing: 0.06em;
+    }
+
+    .cards__list{
+        gap: 12px;
+    }
+}
+
+@media (pointer: coarse){
+    .gifts__category-item:hover{
+        background-color: initial;
+        border-radius: initial;
+        cursor: initial;
+    }
+
+
+}
